@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.saludpublica.evred.ui.Home.HomeFragment"
+        android:label="Casa"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/nav_encuestaEstudiante"
+        android:name="com.saludpublica.evred.ui.encuestaEstudiante.AspectosGeneralesFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_encuesta_aspectos_generales_del_curso" />
+
+    <fragment
+        android:id="@+id/nav_encuestaDocente"
+        android:name="com.saludpublica.evred.ui.encuestaDocente.EncuestaDocenteFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_encuesta_docente" />
+
+    <fragment
+        android:id="@+id/nav_encuestaCompromisos"
+        android:name="com.saludpublica.evred.ui.encuestaCompromiso.EncuestaCompromisoFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_encuesta_compromiso" />
+
+
+</navigation>

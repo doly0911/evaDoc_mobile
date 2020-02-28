@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/pregunta"
+        style="@style/Pregunta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/PreguntaD1"
+        android:textSize="18sp" />
+
+    <RadioGroup
+        android:id="@+id/respuesta-1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pregunta"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <RadioButton
+            android:id="@+id/radioButton170"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/todos_nlos_casos"
+            android:textSize="14sp"
+            android:typeface="normal" />
+
+        <RadioButton
+            android:id="@+id/radioButton171"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/la_mayor_a_nde_los_casos"
+            android:textSize="14sp"
+            android:typeface="normal" />
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/respuesta-2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="-16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_below="@+id/respuesta-1">
+
+        <RadioButton
+            android:id="@+id/radioButton172"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/algunos_ncasos"
+            android:textSize="14sp"
+            android:typeface="normal" />
+
+        <RadioButton
+            android:id="@+id/radioButton173"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/ning_n_caso"
+            android:textSize="14sp"
+            android:typeface="normal" />
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/argumento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/respuesta-2"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        android:maxLength="800"
+        android:maxLines="15"
+        android:textSize="18sp"
+        android:hint="@string/Argumente_su_respuesta"/>
+
+    <Button
+        android:id="@+id/siguiente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:text="@string/siguiente"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/atras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/atras"
+        android:visibility="invisible" />
+</RelativeLayout>
