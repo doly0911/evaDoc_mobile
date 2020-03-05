@@ -12,7 +12,7 @@ class UserData: IUserData
             return UserModel("eduardo.velasquezv@udea.edu.co", "123456789", "eduardo velasquez","estudiante")
         }
         if(email=="docente@udea.edu.co"){
-            return UserModel("docente@udea.edu.co","123456789","docente #1","docente")
+            return UserModel("docente@udea.edu.co","123","docente #1","docente")
         }
         if (email=="compromiso@udea.edu.co"){
             return UserModel("compromiso@udea.edu.co","123456789","compromiso#1","compromiso")

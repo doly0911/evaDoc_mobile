@@ -261,6 +261,7 @@
 
     <Button
         android:id="@+id/siguiente"
+        style="@style/boton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"

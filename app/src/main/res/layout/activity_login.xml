@@ -22,6 +22,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="121dp"
+            android:layout_marginBottom="50dp"
+            app:srcCompat="@drawable/udeafnsp" />
+
         <EditText
             android:id="@+id/emailEditText"
             android:layout_width="match_parent"
@@ -52,9 +59,11 @@
 
         <Button
             android:id="@+id/loginButton"
+            style="@style/boton"
             android:layout_width="150dp"
             android:layout_height="45dp"
-            android:text="Ingresar" />
+            android:text="Ingresar"/>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
