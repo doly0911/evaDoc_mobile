@@ -2,6 +2,7 @@ package com.saludpublica.evred.ui.encuestaEstudiante
 
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +14,9 @@ import com.saludpublica.evred.R
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.fragment_encuesta_aspectos_generales_del_curso.*
 
+
+
+
 class AspectosGeneralesFragment : Fragment() {
 
     override fun onCreateView(
@@ -20,7 +24,12 @@ class AspectosGeneralesFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        
+        val bundle = this.arguments
+        if (bundle != null) {
+             var miCurso = bundle.getString("curso")
+            Log.i("AspectosGenerales", miCurso)
+        }
+
         val root = inflater.inflate(
             R.layout.fragment_encuesta_aspectos_generales_del_curso,
             container,

@@ -8,19 +8,19 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Casa" />
+            android:title="Mi Perfil" />
         <item
             android:id="@+id/nav_encuestaEstudiante"
             android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
+            android:title="Estudiante" />
         <item
             android:id="@+id/nav_encuestaDocente"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:title="Docente" />
         <item
             android:id="@+id/nav_encuestaCompromisos"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:title="Compromisos" />
 
     </group>
 

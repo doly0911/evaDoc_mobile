@@ -21,13 +21,14 @@ import com.saludpublica.evred.ui.encuestaCompromiso.EncuestaCompromisoFragment
 import com.saludpublica.evred.ui.encuestaDocente.EncuestaDocenteFragment
 import com.saludpublica.evred.ui.encuestaEstudiante.AspectosGeneralesFragment
 
+
+
 class HomeFragment : Fragment(), HomeAdapter.OnclickInterface {
     lateinit var view: Context
     lateinit var pref :SharedPreferences
     private val TAG = "HomeFragment"
 
 
-    private val fragmentTransaction = fragmentManager?.beginTransaction()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -101,24 +102,30 @@ class HomeFragment : Fragment(), HomeAdapter.OnclickInterface {
 
     override fun onItemClick(nombre: TextView, profesor: TextView, id: String) {
 
+        val bundle = Bundle()
+        val fragmentTransaction = fragmentManager?.beginTransaction()
+        var fragment = Fragment()
+
         var cargo = pref.getString("cargo", null)
         when (cargo) {
             "estudiante" -> {
-                val fragment = AspectosGeneralesFragment()
+                fragment = AspectosGeneralesFragment()
                 fragmentTransaction?.replace(R.id.nav_host_fragment, fragment)
                 fragmentTransaction?.commit()
             }
             "docente" -> {
-                val fragment = EncuestaDocenteFragment()
+                fragment = EncuestaDocenteFragment()
                 fragmentTransaction?.replace(R.id.nav_host_fragment, fragment)
                 fragmentTransaction?.commit()
             }
             "compromiso" -> {
-                val fragment = EncuestaCompromisoFragment()
+                fragment = EncuestaCompromisoFragment()
                 fragmentTransaction?.replace(R.id.nav_host_fragment, fragment)
                 fragmentTransaction?.commit()
             }
         }
+        bundle.putString("curso", nombre.text.toString())
+        fragment.arguments = bundle
 
     }
 }

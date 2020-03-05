@@ -1,6 +1,7 @@
 package com.saludpublica.evred.ui.encuestaCompromiso
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,6 +26,13 @@ class EncuestaCompromisoFragment : Fragment(), CompromisoAdapter.CustomListener 
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        val bundle = this.arguments
+        if (bundle != null) {
+            var miCurso = bundle.getString("curso")
+            Log.i("encuestaCompromisos", miCurso)
+        }
+
         val root = inflater.inflate(R.layout.fragment_encuesta_compromiso, container, false)
         val context = root.context
         val addButton: ImageButton = root.findViewById(R.id.AddButton)

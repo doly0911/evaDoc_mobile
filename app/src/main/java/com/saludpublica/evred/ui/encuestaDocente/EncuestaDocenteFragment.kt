@@ -2,6 +2,7 @@ package com.saludpublica.evred.ui.encuestaDocente
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,6 +27,12 @@ class EncuestaDocenteFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        val bundle = this.arguments
+        if (bundle != null) {
+            var miCurso = bundle.getString("curso")
+            Log.i("encuestaDocente", miCurso)
+        }
 
         val root = inflater.inflate(R.layout.fragment_encuesta_docente, container, false)
         val context = root.context

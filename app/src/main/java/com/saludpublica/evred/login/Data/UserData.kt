@@ -8,8 +8,8 @@ class UserData: IUserData
     override fun getStundent(email: String): UserModel? {
         //if que verifica si el email existe en la base de datos, cambiar luego por la validacion correspondiente
         //con el consumo de apis
-        if(email=="eduardo.velasquezv@udea.edu.co"){
-            return UserModel("eduardo.velasquezv@udea.edu.co", "123456789", "eduardo velasquez","estudiante")
+        if(email=="estudiante@udea.edu.co"){
+            return UserModel("estudiante@udea.edu.co", "123", "estudiante 1","estudiante")
         }
         if(email=="docente@udea.edu.co"){
             return UserModel("docente@udea.edu.co","123","docente #1","docente")
