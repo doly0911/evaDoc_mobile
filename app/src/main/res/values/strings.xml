@@ -84,5 +84,6 @@
     <string name="alerta_formulario_docente">Apreciado Profesor, la siguiente evaluación se hace con el objetivo de identificar oporunamente falencias y fortalezas
                                               que se están presentado en el curso o módulo, de modo que conjuntamente puedan ser discutidas con los estudiantes
                                               para llegar a un mejor éxito académico.</string>
+    <string name="title_activity_mis_cursos">Evaluación Reflexiva</string>
 
 </resources>

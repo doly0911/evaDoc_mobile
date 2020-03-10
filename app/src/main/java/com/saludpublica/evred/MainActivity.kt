@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity(), ILoginView {
 
     override fun onLoginSuccess(message: String, user: UserModel) {
         Toasty.success(this, message, Toast.LENGTH_LONG).show()
-        val intent = Intent(this, NavBarActivity::class.java)
+        val intent = Intent(this, MisCursosActivity::class.java)
 
         editor.putString("email", user.email)
         editor.putString("name", user.name)
