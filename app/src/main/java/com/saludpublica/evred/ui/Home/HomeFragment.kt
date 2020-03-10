@@ -22,10 +22,9 @@ import com.saludpublica.evred.ui.encuestaDocente.EncuestaDocenteFragment
 import com.saludpublica.evred.ui.encuestaEstudiante.AspectosGeneralesFragment
 
 
-
 class HomeFragment : Fragment(), HomeAdapter.OnclickInterface {
     lateinit var view: Context
-    lateinit var pref :SharedPreferences
+    lateinit var pref: SharedPreferences
     private val TAG = "HomeFragment"
 
 
@@ -40,7 +39,7 @@ class HomeFragment : Fragment(), HomeAdapter.OnclickInterface {
         val context = root.context
         lateinit var mRecyclerView: RecyclerView
         val mAdapter = HomeAdapter()
-        pref= view.getSharedPreferences(
+        pref = view.getSharedPreferences(
             "UserData",
             Context.MODE_PRIVATE
         )
@@ -50,25 +49,7 @@ class HomeFragment : Fragment(), HomeAdapter.OnclickInterface {
         mAdapter.HomeAdapter(getMaterias(), this)
         mRecyclerView.adapter = mAdapter
 
-        val mAlertDialogBtn = root.findViewById<Button>(R.id.btn_showAlertDialog)
-        mAlertDialogBtn.setOnClickListener {
-            Log.i(TAG,"Pruebita")
-            val mAlertDialog = AlertDialog.Builder (root.context)
-                .setTitle("titulo x")
-                .setMessage("Pruebita del texto")
 
-                .setPositiveButton("Acepto",
-                    DialogInterface.OnClickListener { dialog, id ->
-                        Toast.makeText(root.context, "Yep", Toast.LENGTH_SHORT).show()
-                    })
-
-                .setNegativeButton("Cancelar"){ dialog: DialogInterface?, which: Int ->
-                    dialog?.dismiss()
-            }
-
-            // Create the AlertDialog object and return it
-            mAlertDialog.show()
-        }
         return root
     }
 
@@ -105,25 +86,43 @@ class HomeFragment : Fragment(), HomeAdapter.OnclickInterface {
         val bundle = Bundle()
         val fragmentTransaction = fragmentManager?.beginTransaction()
         var fragment = Fragment()
+        var msjAlerta  = ""
+
 
         var cargo = pref.getString("cargo", null)
         when (cargo) {
             "estudiante" -> {
                 fragment = AspectosGeneralesFragment()
                 fragmentTransaction?.replace(R.id.nav_host_fragment, fragment)
-                fragmentTransaction?.commit()
+                msjAlerta = getString(R.string.alerta_formulario_estudiantes)
             }
             "docente" -> {
                 fragment = EncuestaDocenteFragment()
                 fragmentTransaction?.replace(R.id.nav_host_fragment, fragment)
-                fragmentTransaction?.commit()
+                msjAlerta= getString(R.string.alerta_formulario_docente)
             }
             "compromiso" -> {
                 fragment = EncuestaCompromisoFragment()
                 fragmentTransaction?.replace(R.id.nav_host_fragment, fragment)
-                fragmentTransaction?.commit()
             }
         }
+
+        val mAlertDialog = AlertDialog.Builder(this.getView()?.context)
+            .setTitle("Autorización")
+            .setMessage(msjAlerta)
+
+            .setPositiveButton("Acepto",
+                DialogInterface.OnClickListener { dialog, id ->
+
+                    fragmentTransaction?.commit()
+                })
+
+            .setNegativeButton("Cancelar") { dialog: DialogInterface?, which: Int ->
+                    dialog?.dismiss()
+            }
+
+        // Create the AlertDialog object and return it
+        mAlertDialog.show()
         bundle.putString("curso", nombre.text.toString())
         fragment.arguments = bundle
 

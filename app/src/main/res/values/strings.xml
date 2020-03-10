@@ -78,5 +78,11 @@
     <string name="PreguntaD5">La disponibilidad de recursos(equipos, materiales, material bibliográfico) para la actividad academica es adecuada en:</string>
     <string name="atras">Atras</string>
     <string name="Argumente_su_respuesta">Argumente su respuesta</string>
+    <string name="alerta_formulario_estudiantes">Apreciados estudiantes, la siguiente evaluación se hace con el objetivo de identificar
+                                                 oportunamente falencias y fortalezas que se están presentado en el curso o módulo. La información
+                                                  que suministre es confidencial y será producto del consenso del grupo.</string>
+    <string name="alerta_formulario_docente">Apreciado Profesor, la siguiente evaluación se hace con el objetivo de identificar oporunamente falencias y fortalezas
+                                              que se están presentado en el curso o módulo, de modo que conjuntamente puedan ser discutidas con los estudiantes
+                                              para llegar a un mejor éxito académico.</string>
 
 </resources>
