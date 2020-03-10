@@ -14,10 +14,6 @@
             android:label="@string/title_activity_mis_cursos"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".NavBarActivity"
-            android:label="@string/title_activity_nav_bar"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

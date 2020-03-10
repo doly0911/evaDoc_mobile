@@ -29,7 +29,7 @@ class EncuestaCompromisoFragment : Fragment(), CompromisoAdapter.CustomListener 
 
         val bundle = this.arguments
         if (bundle != null) {
-            var miCurso = bundle.getString("curso")
+            val miCurso :String?= bundle.getString("curso")
             Log.i("encuestaCompromisos", miCurso)
         }
 
