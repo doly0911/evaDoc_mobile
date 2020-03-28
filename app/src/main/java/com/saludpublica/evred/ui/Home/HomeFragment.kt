@@ -57,23 +57,26 @@ class HomeFragment : Fragment(), HomeAdapter.OnclickInterface {
         var materias: MutableList<MateriasModel> = ArrayList()
         materias.add(
             MateriasModel(
-                "matematicas",
-                "julio",
-                "1"
+                "Matemáticas",
+                "Julian Vallejo",
+                "201750",
+                "01"
             )
         )
         materias.add(
             MateriasModel(
-                "logica",
-                "roberto",
-                "2"
+                "Lógica y Representación I",
+                "Roberto Florez",
+                "211750",
+                "01"
             )
         )
         materias.add(
             MateriasModel(
-                "calidad",
-                "elmo",
-                "3"
+                "Comunicación",
+                "Luz Bibiana Díaz Martínez",
+                "7017105",
+                "03"
             )
         )
 
@@ -111,7 +114,7 @@ class HomeFragment : Fragment(), HomeAdapter.OnclickInterface {
             .setTitle("Autorización")
             .setMessage(msjAlerta)
 
-            .setPositiveButton("Acepto",
+            .setPositiveButton("Aceptar",
                 DialogInterface.OnClickListener { dialog, id ->
 
                     fragmentTransaction?.commit()

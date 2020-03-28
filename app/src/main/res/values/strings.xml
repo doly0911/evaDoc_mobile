@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">EVRED</string>
-    <string name="title">Evaluacion reflexiva</string>
+    <string name="title">Evaluacion Reflexiva</string>
     <string name="correoUniversitario">Ingrese su correo universitario</string>
     <string name="contraceñaUniversitaria">Ingrese su contraseña</string>
 
@@ -64,26 +64,26 @@
     <string name="_5">5</string>
     <string name="si">Si</string>
     <string name="no">No</string>
-    <string name="observaciones">Observaciones o concluciones finales</string>
+    <string name="observaciones">Observaciones o conclusiones finales</string>
     <string name="siguiente">Siguiente</string>
     <string name="finalizar">finalizar</string>
     <string name="ning_n_caso">Ningún caso</string>
     <string name="todos_nlos_casos">Todos los casos</string>
     <string name="la_mayor_a_nde_los_casos">La mayoría de los casos</string>
     <string name="algunos_ncasos">Algunos casos</string>
-    <string name="PreguntaD1">El comartamiento y el trato que usted recibe de los estudiantes es respetuoso en:</string>
-    <string name="PreguntaD2">El comartamiento y el trato que usted brinda de los estudiantes es respetuoso en:</string>
+    <string name="PreguntaD1">El comportamiento y el trato que usted recibe de los estudiantes es respetuoso en:</string>
+    <string name="PreguntaD2">El comportamiento y el trato que usted brinda de los estudiantes es respetuoso en:</string>
     <string name="PreguntaD3">El cumplimiento de los estudiantes en relación con el horario de clase y las citas programadas se dan en:</string>
     <string name="PreguntaD4">En general, con el desarrollo del curso, usted se encuentra:</string>
     <string name="PreguntaD5">La disponibilidad de recursos(equipos, materiales, material bibliográfico) para la actividad academica es adecuada en:</string>
     <string name="atras">Atras</string>
     <string name="Argumente_su_respuesta">Argumente su respuesta</string>
-    <string name="alerta_formulario_estudiantes">Apreciados estudiantes, la siguiente evaluación se hace con el objetivo de identificar
+    <string name="alerta_formulario_estudiantes">Apreciado estudiante, la siguiente evaluación se hace con el objetivo de identificar
                                                  oportunamente falencias y fortalezas que se están presentado en el curso o módulo. La información
                                                   que suministre es confidencial y será producto del consenso del grupo.</string>
     <string name="alerta_formulario_docente">Apreciado Profesor, la siguiente evaluación se hace con el objetivo de identificar oporunamente falencias y fortalezas
                                               que se están presentado en el curso o módulo, de modo que conjuntamente puedan ser discutidas con los estudiantes
                                               para llegar a un mejor éxito académico.</string>
-    <string name="title_activity_mis_cursos">Evaluación Reflexiva</string>
+    <string name="title_activity_mis_cursos">Mis cursos</string>
 
 </resources>

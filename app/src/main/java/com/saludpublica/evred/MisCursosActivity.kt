@@ -5,10 +5,17 @@ import android.view.Menu
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.Fragment
+import com.saludpublica.evred.ui.encuestaCompromiso.EncuestaCompromisoFragment
+import com.saludpublica.evred.ui.encuestaDocente.EncuestaDocenteFragment
+import com.saludpublica.evred.ui.encuestaDocente.OnFragmentInteractionListener
 
 import kotlinx.android.synthetic.main.activity_mis_cursos.*
 
-class MisCursosActivity : AppCompatActivity() {
+class MisCursosActivity : AppCompatActivity(), OnFragmentInteractionListener {
+    override fun onFragmentInteraction(title: String) {
+        supportActionBar?.title = title
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

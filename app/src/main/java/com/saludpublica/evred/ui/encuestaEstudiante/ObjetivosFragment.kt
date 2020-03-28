@@ -25,7 +25,7 @@ class ObjetivosFragment : Fragment() {
         )
         val context = root.context
         val siguiente: Button = root.findViewById(R.id.siguiente)
-        siguiente.setOnClickListener() {
+        siguiente.setOnClickListener {
 
 
             val respuesta4Id = respuesta4.checkedRadioButtonId

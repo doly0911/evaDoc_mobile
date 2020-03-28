@@ -1,6 +1,7 @@
 package com.saludpublica.evred.ui.encuestaEstudiante
 
 
+import android.app.Activity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import android.widget.RadioButton
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.saludpublica.evred.R
+import com.saludpublica.evred.ui.encuestaDocente.OnFragmentInteractionListener
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.fragment_encuesta_aspectos_generales_del_curso.*
 
@@ -19,11 +21,16 @@ import kotlinx.android.synthetic.main.fragment_encuesta_aspectos_generales_del_c
 
 class AspectosGeneralesFragment : Fragment() {
 
+    internal var callback: OnFragmentInteractionListener? = null
+    private val fragmentTitle = "Evaluación reflexiva"
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        callback?.onFragmentInteraction(fragmentTitle)
         val bundle = this.arguments
         if (bundle != null) {
              var miCurso = bundle.getString("curso")
@@ -89,5 +96,20 @@ class AspectosGeneralesFragment : Fragment() {
         }
 
         return root
+    }
+
+    override fun onAttach(activity: Activity) {
+        super.onAttach(activity)
+        try {
+            callback = activity as OnFragmentInteractionListener
+        } catch (e: ClassCastException) {
+            throw ClassCastException("$activity must implement OnFragmentInteractionListener")
+        }
+
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        callback = null
     }
 }

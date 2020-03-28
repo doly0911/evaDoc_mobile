@@ -1,7 +1,8 @@
 package com.saludpublica.evred.ui.Home
 
 data class MateriasModel(
-    var nombre: String,
+    var curso: String,
     var profesor: String,
-    var id: String
+    var codigo: String,
+    var grupo: String
 )

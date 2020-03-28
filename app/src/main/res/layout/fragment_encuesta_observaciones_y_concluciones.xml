@@ -29,7 +29,7 @@
             android:ems="10"
             android:gravity="start|top"
             android:inputType="textMultiLine"
-            android:hint="pruebita"
+            android:hint="Ingresar texto aquí"
             tools:targetApi="o" />
     </RelativeLayout>
 

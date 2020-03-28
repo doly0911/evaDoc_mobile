@@ -11,7 +11,7 @@ class LoginPresenter(internal var iLoginView: ILoginView) : ILoginPresenter {
 
     override fun isStudent(email: String, password: String) {
         //busca en la base de datos el email y se trae la informacion nesesario
-        // email password nombre materias
+        // email password curso materias
         val user: UserModel? = studentData.getStundent(email)
         if (user != null) {
             if (password == user.password) {

@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment
 import com.saludpublica.evred.R
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.fragment_encuesta_docente.*
+import android.app.Activity
 
 
 class EncuestaDocenteFragment : Fragment() {
@@ -21,6 +22,10 @@ class EncuestaDocenteFragment : Fragment() {
     private var encuestaDocenteModel = EncuestaDocenteModel()
     private var isChecking = true
     private var mCheckedId: Int = R.id.radioButton171
+    internal var callback: OnFragmentInteractionListener? = null
+    private val fragmentTitle = "Encuesta Docente"
+
+
     @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,6 +33,7 @@ class EncuestaDocenteFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        callback?.onFragmentInteraction(fragmentTitle)
         val bundle = this.arguments
         if (bundle != null) {
             var miCurso = bundle.getString("curso")
@@ -178,5 +184,21 @@ class EncuestaDocenteFragment : Fragment() {
             //recargar los valores correspondientes
         }
         return root
+    }
+
+
+    override fun onAttach(activity: Activity) {
+        super.onAttach(activity)
+        try {
+            callback = activity as OnFragmentInteractionListener
+        } catch (e: ClassCastException) {
+            throw ClassCastException("$activity must implement OnFragmentInteractionListener")
+        }
+
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        callback = null
     }
 }

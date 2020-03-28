@@ -1,38 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="5dp"
     android:background="@drawable/card_background_selector"
     android:descendantFocusability="afterDescendants"
-    android:layout_margin="5dp">
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/Nombre"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:id="@+id/curso_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/Profesor"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Nombre" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/curso_txt"
+            android:text="Curso:"
+            style="@style/listaCursos" />
+
+        <TextView
+            android:id="@+id/nom_curso_txt"
+            style="@style/listaCursos" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/grupo_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/curso_layout"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/grupo_txt"
+            android:text="Grupo:"
+            style="@style/listaCursos" />
+
+        <TextView
+            android:id="@+id/nom_grupo_txt"
+            style="@style/listaCursos" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/codigo_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/grupo_layout"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/codigo_txt"
+            android:text="Código:"
+            style="@style/listaCursos" />
+
+        <TextView
+            android:id="@+id/nom_codigo_txt"
+            style="@style/listaCursos" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/profesor_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/codigo_layout"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/profesor_txt"
+            android:text="Profesor:"
+            style="@style/listaCursos" />
+
+        <TextView
+            android:id="@+id/nom_profesor_txt"
+            style="@style/listaCursos" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -35,8 +35,10 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
     class ViewHolder(view: View, listener: OnclickInterface) : RecyclerView.ViewHolder(view),
         View.OnClickListener {
         var listener: OnclickInterface
-        val nombre = view.findViewById(R.id.Nombre) as TextView
-        val profesor = view.findViewById(R.id.Profesor) as TextView
+        val curso = view.findViewById(R.id.nom_curso_txt) as TextView
+        val profesor = view.findViewById(R.id.nom_profesor_txt) as TextView
+        val grupo = view.findViewById(R.id.nom_grupo_txt) as TextView
+        val codigo = view.findViewById(R.id.nom_codigo_txt) as TextView
         lateinit var id:String
 
         init {
@@ -45,14 +47,14 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
         }
 
         fun bind(materias: MateriasModel) {
-            nombre.text = materias.nombre
+            curso.text = materias.curso
             profesor.text = materias.profesor
-            id=materias.id
-
+            codigo.text = materias.codigo
+            grupo.text = materias.grupo
         }
 
         override fun onClick(v: View?) {
-            listener.onItemClick(nombre,profesor,id)
+            listener.onItemClick(curso,profesor,codigo.text.toString())
         }
 
 
