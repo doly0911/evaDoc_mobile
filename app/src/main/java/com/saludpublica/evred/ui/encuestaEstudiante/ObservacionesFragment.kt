@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.saludpublica.evred.R
+import com.saludpublica.evred.ui.Home.HomeFragment
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.fragment_encuesta_observaciones_y_concluciones.*
 
@@ -18,7 +19,7 @@ class ObservacionesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         
-        var encuestaEstudianteModel = EncuestaEstudianteModel()
+        val encuestaEstudianteModel = EncuestaEstudianteModel()
         val root = inflater.inflate(
             R.layout.fragment_encuesta_observaciones_y_concluciones,
             container,
@@ -110,8 +111,13 @@ class ObservacionesFragment : Fragment() {
                     encuestaEstudianteModel.observacion = observaciones.text.toString()
                 }
             }
+
+            //Redirección al HomeFragment cuando finaliza el formulario
+            val fragmentTransaction = fragmentManager?.beginTransaction()
+            fragmentTransaction?.replace(R.id.nav_host_fragment,  HomeFragment())
+            fragmentTransaction?.commit()
+
         }
-        //retornar al inicio
         return root
     }
 }

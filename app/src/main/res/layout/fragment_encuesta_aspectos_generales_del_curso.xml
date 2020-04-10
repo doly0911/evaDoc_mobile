@@ -28,7 +28,7 @@
             android:id="@+id/encuesta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp">
+            android:layout_marginTop="0dp">
 
             <TextView
                 android:id="@+id/titulo"
@@ -237,21 +237,25 @@
                     android:text="@string/_5" />
             </RadioGroup>
 
+            <Button
+                android:id="@+id/siguiente"
+                style="@style/boton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="30dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/siguiente"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/respuesta3"/>
+
         </RelativeLayout>
+
+
 
     </ScrollView>
 
-    <Button
-        android:id="@+id/siguiente"
-        style="@style/boton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/siguiente"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="16dp" />
+
 
 </RelativeLayout>

@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.CompromisoAdapter
 import com.saludpublica.evred.R
+import com.saludpublica.evred.ui.Home.HomeFragment
 import java.util.*
 
 
@@ -56,6 +57,11 @@ class EncuestaCompromisoFragment : Fragment(), CompromisoAdapter.CustomListener 
             for (item in list) {
                 println(item)
             }
+
+            //Redirección al HomeFragment cuando finalice los compromisos. REVISAR
+            val fragmentTransaction = fragmentManager?.beginTransaction()
+            fragmentTransaction?.replace(R.id.nav_host_fragment, HomeFragment())
+            fragmentTransaction?.commit()
 
         }
         return root

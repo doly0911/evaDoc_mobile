@@ -1,16 +1,13 @@
 package com.saludpublica.evred
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
-import com.google.android.material.snackbar.Snackbar
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.fragment.app.Fragment
-import com.saludpublica.evred.ui.encuestaCompromiso.EncuestaCompromisoFragment
-import com.saludpublica.evred.ui.encuestaDocente.EncuestaDocenteFragment
 import com.saludpublica.evred.ui.encuestaDocente.OnFragmentInteractionListener
 
-import kotlinx.android.synthetic.main.activity_mis_cursos.*
 
 class MisCursosActivity : AppCompatActivity(), OnFragmentInteractionListener {
     override fun onFragmentInteraction(title: String) {
@@ -29,6 +26,21 @@ class MisCursosActivity : AppCompatActivity(), OnFragmentInteractionListener {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.nav_bar, menu)
         return true
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle item selection
+        return when (item.itemId) {
+            //Caso cuando el menuItem seleccionado es cerrar sesion
+            R.id.cerrar_sesion -> {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
 }

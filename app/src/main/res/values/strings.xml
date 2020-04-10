@@ -85,5 +85,6 @@
                                               que se están presentado en el curso o módulo, de modo que conjuntamente puedan ser discutidas con los estudiantes
                                               para llegar a un mejor éxito académico.</string>
     <string name="title_activity_mis_cursos">Mis cursos</string>
+    <string name="btn_evaluar">Evaluar</string>
 
 </resources>

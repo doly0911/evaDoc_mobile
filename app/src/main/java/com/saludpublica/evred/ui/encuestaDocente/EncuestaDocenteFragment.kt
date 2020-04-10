@@ -15,6 +15,7 @@ import com.saludpublica.evred.R
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.fragment_encuesta_docente.*
 import android.app.Activity
+import com.saludpublica.evred.ui.Home.HomeFragment
 
 
 class EncuestaDocenteFragment : Fragment() {
@@ -159,6 +160,12 @@ class EncuestaDocenteFragment : Fragment() {
                     6 -> {
                         pregunta.text = getString(R.string.observaciones)
                         siguiente.text = "Terminar"
+
+                        //Redireccion al HomeFragment al dar clic en Finalizar formulario
+                        val fragmentTransaction = fragmentManager?.beginTransaction()
+                        fragmentTransaction?.replace(R.id.nav_host_fragment, HomeFragment())
+                        fragmentTransaction?.commit()
+
                         respuesta_1.visibility = View.GONE
                     }
                 }
