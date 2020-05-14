@@ -1,15 +1,20 @@
 package com.saludpublica.evred
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.navigation.findNavController
 import com.saludpublica.evred.ui.encuestaDocente.OnFragmentInteractionListener
 
 
 class MisCursosActivity : AppCompatActivity(), OnFragmentInteractionListener {
+
+    lateinit var pref: SharedPreferences
     override fun onFragmentInteraction(title: String) {
         supportActionBar?.title = title
     }
@@ -19,6 +24,19 @@ class MisCursosActivity : AppCompatActivity(), OnFragmentInteractionListener {
         setContentView(R.layout.activity_mis_cursos)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+
+        pref = this.getSharedPreferences(
+            "UserData",
+            Context.MODE_PRIVATE
+        )
+
+        val cargo = pref.getString("cargo", null)
+        val navGraph = this.findNavController(R.id.nav_host_fragment).graph;
+
+        if(cargo.equals("compromiso",true)  ){
+            navGraph.startDestination = R.id.nav_encuestaCompromisos
+            this.findNavController(R.id.nav_host_fragment).graph = navGraph
+        }
 
     }
 

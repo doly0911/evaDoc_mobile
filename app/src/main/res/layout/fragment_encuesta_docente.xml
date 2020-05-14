@@ -19,7 +19,7 @@
         android:textSize="18sp" />
 
     <RadioGroup
-        android:id="@+id/respuesta-1"
+        android:id="@+id/respuesta_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/pregunta"
@@ -51,7 +51,7 @@
     </RadioGroup>
 
     <RadioGroup
-        android:id="@+id/respuesta-2"
+        android:id="@+id/respuesta_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -60,7 +60,7 @@
         android:layout_marginTop="-16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
-        android:layout_below="@+id/respuesta-1">
+        android:layout_below="@+id/respuesta_1">
 
         <RadioButton
             android:id="@+id/radioButton172"
@@ -84,7 +84,7 @@
         android:id="@+id/argumento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/respuesta-2"
+        android:layout_below="@+id/respuesta_2"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
@@ -111,19 +111,4 @@
         android:text="@string/siguiente"
         android:layout_alignParentEnd="true" />
 
-    <Button
-        android:id="@+id/atras"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/atras"
-        android:visibility="invisible" />
 </RelativeLayout>

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -33,6 +34,9 @@ class EncuestaCompromisoFragment : Fragment(), CompromisoAdapter.CustomListener 
             val miCurso :String?= bundle.getString("curso")
             Log.i("encuestaCompromisos", miCurso)
         }
+
+        //Se modifica el titulo del navBar
+        (activity as AppCompatActivity).supportActionBar?.title = "Compromisos"
 
         val root = inflater.inflate(R.layout.fragment_encuesta_compromiso, container, false)
         val context = root.context

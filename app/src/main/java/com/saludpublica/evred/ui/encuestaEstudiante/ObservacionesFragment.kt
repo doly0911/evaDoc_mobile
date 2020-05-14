@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import com.saludpublica.evred.R
 import com.saludpublica.evred.ui.Home.HomeFragment
@@ -26,6 +27,7 @@ class ObservacionesFragment : Fragment() {
             false
         )
         val context = root.context
+        val respuestas = arguments
         val finalizar: Button = root.findViewById(R.id.finalizar)
         finalizar.setOnClickListener() {
             if (observacion.text.toString() == "") {
@@ -35,7 +37,6 @@ class ObservacionesFragment : Fragment() {
                     Toast.LENGTH_LONG
                 ).show()
             } else {
-                val respuestas = arguments
                 if (respuestas != null) {
                     encuestaEstudianteModel.respuesta1 =
                         respuestas.getString("respuesta1").toString()
@@ -109,14 +110,23 @@ class ObservacionesFragment : Fragment() {
                         respuestas.getString("respuesta28").toString()
 
                     encuestaEstudianteModel.observacion = observaciones.text.toString()
+
+                    Toasty.success(context, "Respuestas guardadas exitosamente", Toast.LENGTH_SHORT).show()
+                    //Redirección al HomeFragment cuando finaliza el formulario
+                    val fragmentTransaction = fragmentManager?.beginTransaction()
+                    fragmentTransaction?.replace(R.id.nav_host_fragment,  HomeFragment())
+                    fragmentTransaction?.commit()
                 }
             }
 
-            //Redirección al HomeFragment cuando finaliza el formulario
-            val fragmentTransaction = fragmentManager?.beginTransaction()
-            fragmentTransaction?.replace(R.id.nav_host_fragment,  HomeFragment())
-            fragmentTransaction?.commit()
+        }
 
+        requireActivity().onBackPressedDispatcher.addCallback(this) {
+            val fragmentTransaction = fragmentManager?.beginTransaction()
+            val fragment =  ActitudEstudianteFragmen()
+            fragment.arguments = respuestas
+            fragmentTransaction?.replace(R.id.nav_host_fragment,fragment)
+            fragmentTransaction?.commit()
         }
         return root
     }

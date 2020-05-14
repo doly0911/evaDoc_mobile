@@ -15,6 +15,7 @@ import com.saludpublica.evred.R
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.fragment_encuesta_docente.*
 import android.app.Activity
+import androidx.activity.addCallback
 import com.saludpublica.evred.ui.Home.HomeFragment
 
 
@@ -145,40 +146,41 @@ class EncuestaDocenteFragment : Fragment() {
                 respuesta_2.clearCheck()
                 argumento.text.clear()
 
-                if (numeroPregunta < 6) {
+                if (numeroPregunta < 7) {
                     numeroPregunta++
                 }
                 when (numeroPregunta) {
-                    2 -> {
-                        pregunta.text = getString(R.string.PreguntaD2)
-                        atras.visibility = View.VISIBLE
-
-                    }
+                    2 -> pregunta.text = getString(R.string.PreguntaD2)
                     3 -> pregunta.text = getString(R.string.PreguntaD3)
                     4 -> pregunta.text = getString(R.string.PreguntaD4)
                     5 -> pregunta.text = getString(R.string.PreguntaD5)
                     6 -> {
                         pregunta.text = getString(R.string.observaciones)
                         siguiente.text = "Terminar"
-
+                        respuesta_1.visibility = View.GONE
+                    }
+                    7->{
+                        Toasty.success(context, "Respuestas guardadas exitosamente", Toast.LENGTH_SHORT).show()
                         //Redireccion al HomeFragment al dar clic en Finalizar formulario
                         val fragmentTransaction = fragmentManager?.beginTransaction()
                         fragmentTransaction?.replace(R.id.nav_host_fragment, HomeFragment())
                         fragmentTransaction?.commit()
 
-                        respuesta_1.visibility = View.GONE
                     }
                 }
             }
         }
-        val atras: Button = root.findViewById(R.id.atras)
-        atras.setOnClickListener {
+        // Back Button
+        requireActivity().onBackPressedDispatcher.addCallback(this) {
             numeroPregunta--
             when (numeroPregunta) {
-                1 -> {
-                    pregunta.text = getString(R.string.PreguntaD1)
-                    atras.visibility = View.INVISIBLE
+                0 -> {
+                    val fragmentTransaction = fragmentManager?.beginTransaction()
+                    fragmentTransaction?.replace(R.id.nav_host_fragment, HomeFragment())
+                    fragmentTransaction?.commit()
                 }
+                1 -> pregunta.text = getString(R.string.PreguntaD1)
+
                 2 -> pregunta.text = getString(R.string.PreguntaD2)
                 3 -> pregunta.text = getString(R.string.PreguntaD3)
                 4 -> pregunta.text = getString(R.string.PreguntaD4)
@@ -188,7 +190,6 @@ class EncuestaDocenteFragment : Fragment() {
                     respuesta_1.visibility = View.VISIBLE
                 }
             }
-            //recargar los valores correspondientes
         }
         return root
     }

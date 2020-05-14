@@ -22,11 +22,11 @@ class MainActivity : AppCompatActivity(), ILoginView {
     lateinit var editor: SharedPreferences.Editor
 
     override fun onLoginError(message: String) {
-        Toasty.error(this, message, Toast.LENGTH_LONG).show()
+        Toasty.error(this, message, Toast.LENGTH_SHORT).show()
     }
 
     override fun onLoginSuccess(message: String, user: UserModel) {
-        Toasty.success(this, message, Toast.LENGTH_LONG).show()
+        Toasty.success(this, message, Toast.LENGTH_SHORT).show()
         val intent = Intent(this, MisCursosActivity::class.java)
 
         editor.putString("email", user.email)

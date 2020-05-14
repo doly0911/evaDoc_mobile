@@ -79,13 +79,15 @@
 
     <Button
         android:id="@+id/btnEvaluar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/boton_evaluar"
+        android:layout_width="74dp"
+        android:layout_height="35dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:layout_marginEnd="33dp"
-        android:layout_marginRight="33dp"
-        android:text="@string/btn_evaluar" />
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:text="@string/btn_evaluar"
+        android:textSize="12sp" />
 
 </RelativeLayout>

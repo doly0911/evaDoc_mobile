@@ -86,5 +86,14 @@
                                               para llegar a un mejor éxito académico.</string>
     <string name="title_activity_mis_cursos">Mis cursos</string>
     <string name="btn_evaluar">Evaluar</string>
+    <string name="evaluado">Evaluado</string>
+
+    <string-array name="calificacion_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
 
 </resources>

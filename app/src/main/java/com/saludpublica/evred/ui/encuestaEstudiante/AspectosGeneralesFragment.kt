@@ -10,8 +10,10 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.RadioButton
 import android.widget.Toast
+import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import com.saludpublica.evred.R
+import com.saludpublica.evred.ui.Home.HomeFragment
 import com.saludpublica.evred.ui.encuestaDocente.OnFragmentInteractionListener
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.fragment_encuesta_aspectos_generales_del_curso.*
@@ -94,7 +96,12 @@ class AspectosGeneralesFragment : Fragment() {
                 }
             }
         }
-
+        // Redireccionar al home
+        requireActivity().onBackPressedDispatcher.addCallback(this) {
+            val fragmentTransaction = fragmentManager?.beginTransaction()
+            fragmentTransaction?.replace(R.id.nav_host_fragment, HomeFragment())
+            fragmentTransaction?.commit()
+        }
         return root
     }
 

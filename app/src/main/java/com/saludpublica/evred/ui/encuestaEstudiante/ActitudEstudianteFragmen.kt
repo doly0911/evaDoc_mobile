@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.RadioButton
 import android.widget.Toast
+import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import com.saludpublica.evred.R
 import es.dmoral.toasty.Toasty
@@ -25,6 +26,7 @@ class ActitudEstudianteFragmen : Fragment() {
             false
         )
         val context = root.context
+        val respuestas = arguments
         val siguiente: Button = root.findViewById(R.id.siguiente)
         siguiente.setOnClickListener() {
             val respuesta22Id = respuesta22.checkedRadioButtonId
@@ -82,7 +84,6 @@ class ActitudEstudianteFragmen : Fragment() {
 
                     val fragmentTransaction = fragmentManager?.beginTransaction()
                     val fragment = ObservacionesFragment()
-                    val respuestas = arguments
                     if (respuestas != null) {
                         var radioButton: View = respuesta22.findViewById(respuesta22Id)
                         var indice: Int = respuesta22.indexOfChild(radioButton)
@@ -125,6 +126,14 @@ class ActitudEstudianteFragmen : Fragment() {
                     }
                 }
             }
+        }
+
+        requireActivity().onBackPressedDispatcher.addCallback(this) {
+            val fragmentTransaction = fragmentManager?.beginTransaction()
+            val fragment =  ActitudDocenteFragment()
+            fragment.arguments = respuestas
+            fragmentTransaction?.replace(R.id.nav_host_fragment, fragment )
+            fragmentTransaction?.commit()
         }
         return root
     }

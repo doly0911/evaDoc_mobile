@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.RadioButton
 import android.widget.Toast
+import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import com.saludpublica.evred.R
 import es.dmoral.toasty.Toasty
@@ -81,6 +82,14 @@ class ObjetivosFragment : Fragment() {
                 }
             }
         }
+
+        requireActivity().onBackPressedDispatcher.addCallback(this) {
+            val fragmentTransaction = fragmentManager?.beginTransaction()
+            AspectosGeneralesFragment().arguments = arguments
+            fragmentTransaction?.replace(R.id.nav_host_fragment, AspectosGeneralesFragment())
+            fragmentTransaction?.commit()
+        }
+
         return root
     }
 }

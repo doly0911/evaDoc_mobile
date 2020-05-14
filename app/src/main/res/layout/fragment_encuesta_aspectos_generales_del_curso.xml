@@ -18,11 +18,30 @@
         android:text="@string/Instrucciones1"
         android:textSize="18sp" />
 
+    <TextView
+        android:id="@+id/titulo"
+        style="@style/Titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="10dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:text="@string/Titulo1"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:background="@color/colorSombreado"
+        android:layout_below="@id/instrucciones"/>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        android:layout_below="@id/instrucciones">
+        android:layout_below="@id/titulo">
 
         <RelativeLayout
             android:id="@+id/encuesta"
@@ -31,25 +50,9 @@
             android:layout_marginTop="0dp">
 
             <TextView
-                android:id="@+id/titulo"
-                style="@style/Titulo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginBottom="16dp"
-                android:text="@string/Titulo1"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
                 android:id="@+id/pregunta1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/titulo"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"

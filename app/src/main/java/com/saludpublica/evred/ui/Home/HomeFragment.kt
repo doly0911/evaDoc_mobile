@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -43,6 +44,7 @@ class HomeFragment : Fragment(), HomeAdapter.OnclickInterface {
             "UserData",
             Context.MODE_PRIVATE
         )
+        (activity as AppCompatActivity).supportActionBar?.title = "Mis cursos"
         mRecyclerView = root.findViewById(R.id.rvMaterias) as RecyclerView
         mRecyclerView.setHasFixedSize(true)
         mRecyclerView.layoutManager = LinearLayoutManager(context)
@@ -60,7 +62,8 @@ class HomeFragment : Fragment(), HomeAdapter.OnclickInterface {
                 "Matemáticas",
                 "Julian Vallejo",
                 "201750",
-                "01"
+                "01",
+                true
             )
         )
         materias.add(
@@ -68,7 +71,8 @@ class HomeFragment : Fragment(), HomeAdapter.OnclickInterface {
                 "Lógica y Representación I",
                 "Roberto Florez",
                 "211750",
-                "01"
+                "01",
+                false
             )
         )
         materias.add(
@@ -76,7 +80,8 @@ class HomeFragment : Fragment(), HomeAdapter.OnclickInterface {
                 "Comunicación",
                 "Luz Bibiana Díaz Martínez",
                 "7017105",
-                "03"
+                "03",
+                false
             )
         )
 

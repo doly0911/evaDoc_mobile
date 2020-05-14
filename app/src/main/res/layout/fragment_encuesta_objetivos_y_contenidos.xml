@@ -17,10 +17,27 @@
         android:text="@string/Instrucciones1"
         android:textSize="18sp" />
 
+    <TextView
+        android:id="@+id/titulo"
+        style="@style/Titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/Titulo2"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_below="@id/instrucciones"/>
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/instrucciones"
+        android:layout_below="@id/titulo"
         android:fillViewport="true">
 
         <RelativeLayout
@@ -30,25 +47,9 @@
 
 
             <TextView
-                android:id="@+id/titulo"
-                style="@style/Titulo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginBottom="16dp"
-                android:text="@string/Titulo2"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
                 android:id="@+id/pregunta4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/titulo"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"

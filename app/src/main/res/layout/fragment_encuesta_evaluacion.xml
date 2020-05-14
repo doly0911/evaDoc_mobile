@@ -17,10 +17,20 @@
         android:text="@string/Instrucciones1"
         android:textSize="18sp" />
 
+    <TextView
+        android:id="@+id/titulo"
+        style="@style/Titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Titulo4"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_below="@id/instrucciones3"/>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/instrucciones3"
+        android:layout_below="@id/titulo"
         android:layout_centerInParent="true"
         android:layout_marginBottom="16dp">
 
@@ -30,19 +40,10 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/titulo"
-                style="@style/Titulo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/Titulo4"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
                 android:id="@+id/pregunta12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/titulo"
+
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginRight="16dp"

@@ -1,11 +1,15 @@
 package com.saludpublica.evred.ui.Home
 
+import android.content.Context
+import android.graphics.Color
+import android.os.Build
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.saludpublica.evred.R
 
@@ -42,6 +46,7 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
     class ViewHolder(view: View, listener: OnclickInterface) : RecyclerView.ViewHolder(view),
         View.OnClickListener {
         var listener: OnclickInterface
+        var root : Context;
         val curso = view.findViewById(R.id.nom_curso_txt) as TextView
         val profesor = view.findViewById(R.id.nom_profesor_txt) as TextView
         val grupo = view.findViewById(R.id.nom_grupo_txt) as TextView
@@ -53,6 +58,7 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
         init {
             view.setOnClickListener(this)
             this.listener = listener
+            this.root =  view.context;
         }
 
         fun bind(materias: MateriasModel) {
@@ -60,6 +66,19 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
             profesor.text = materias.profesor
             codigo.text = materias.codigo
             grupo.text = materias.grupo
+
+            if (materias.evaluado){
+                btnEvaluar.isEnabled = false;
+                btnEvaluar.setBackgroundColor(Color.WHITE);
+                btnEvaluar.text = root.getString(R.string.evaluado)
+                //btnEvaluar.setTextColor(Color.BLACK)
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    btnEvaluar.setTextColor(root.getColor(R.color.colorPrimary))
+                }else{
+                    btnEvaluar.setTextColor(ContextCompat.getColor(root,R.color.colorPrimary))
+                }
+
+            }
         }
 
 

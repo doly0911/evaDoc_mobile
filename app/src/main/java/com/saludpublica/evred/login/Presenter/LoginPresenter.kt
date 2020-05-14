@@ -7,12 +7,12 @@ import com.saludpublica.evred.login.Model.UserModel
 import com.saludpublica.evred.login.View.ILoginView
 
 class LoginPresenter(internal var iLoginView: ILoginView) : ILoginPresenter {
-    private val studentData: UserData = UserData()
+    private val userData: UserData = UserData()
 
-    override fun isStudent(email: String, password: String) {
+    override fun isUser(email: String, password: String) {
         //busca en la base de datos el email y se trae la informacion nesesario
         // email password curso materias
-        val user: UserModel? = studentData.getStundent(email)
+        val user: UserModel? = userData.getUser(email)
         if (user != null) {
             if (password == user.password) {
                 iLoginView.onLoginSuccess("Login success", user)
@@ -38,7 +38,7 @@ class LoginPresenter(internal var iLoginView: ILoginView) : ILoginPresenter {
         when (isLoginCode) {
             0 -> iLoginView.onLoginError("Please enter a valid email")
             1 -> iLoginView.onLoginError("Invalid email, check email")
-            -1 -> isStudent(email, password)
+            -1 -> isUser(email, password)
         }
     }
 
